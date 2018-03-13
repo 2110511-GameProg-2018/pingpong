@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseCard {
 
+public class BaseCard : MonoBehaviour {
     string name;
     string id;
     Texture2D image;
     string description;
     float ballSpeed;
-
-
+    
+    
 }
