@@ -32,7 +32,6 @@ public class Field : MonoBehaviour {
 
 	void OnEnable() {
 		inputState = Direction.NONE;
-		cursorState = Direction.NONE;
 	}
 	
 	// Update is called once per frame

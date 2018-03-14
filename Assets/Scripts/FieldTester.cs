@@ -25,5 +25,17 @@ public class FieldTester : MonoBehaviour {
 		else if (Input.GetKeyDown(KeyCode.Keypad3)) {
 			testField.setDirectionState (false, false, false, false);
 		}
+
+		if (Input.GetKeyDown(KeyCode.E)) {
+			testField.gameObject.SetActive(true);
+		}
+		if (Input.GetKeyDown(KeyCode.D)) {
+			testField.gameObject.SetActive(false);
+		}
+
+		if (testField.gameObject.active && testField.getInputDirection() != Direction.NONE) {
+			Debug.Log ("FieldTester/Update: field send " + testField.getInputDirection());
+			testField.gameObject.SetActive(false);
+		}
 	}
 }
