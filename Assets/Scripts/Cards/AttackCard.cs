@@ -6,5 +6,11 @@ public class AttackCard : BaseCard
 {
     public AttackCard(CardData cardData) : base(cardData)
     {
+        
+    }
+
+    public override string ToString()
+    {
+        return "AttackCard[id=" + id + ", cardName=" + cardName + "]";
     }
 }

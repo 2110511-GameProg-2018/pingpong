@@ -7,4 +7,8 @@ public class DefendCard : BaseCard
     public DefendCard(CardData cardData) : base(cardData)
     {
     }
+    public override string ToString()
+    {
+        return "DefendCard[id=" + id + ", cardName=" + cardName + "]";
+    }
 }

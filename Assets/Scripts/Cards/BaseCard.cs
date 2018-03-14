@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class BaseCard : MonoBehaviour, System.IComparable<BaseCard>
 {
-    string cardName;
-    int id;
-    Sprite image;
-    string description;
-    float ballSpeed;
+    protected string cardName;
+    protected int id;
+    protected Sprite image;
+    protected string description;
+    protected float ballSpeed;
 
     // Generic Constructor //
     public BaseCard(string cardName, int id, Sprite image, string description, float ballSpeed)
@@ -39,6 +39,6 @@ public class BaseCard : MonoBehaviour, System.IComparable<BaseCard>
 
     public override string ToString()
     {
-
+        return "BaseCard[id=" + id + ", cardName=" + cardName + "]";
     }
 }
