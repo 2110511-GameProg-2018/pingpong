@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BaseCard : MonoBehaviour, System.IComparable<BaseCard>
 {
-    string name;
+    string cardName;
     string id;
     Texture2D image;
     string description;
