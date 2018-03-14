@@ -3,6 +3,7 @@
   "cards": [
     {
       "cid": 1,
+      "type": "attack",
       "nameTh": "ตีปิงปองลูกไฟ",
       "author": "Kris",
       "imagePath": "0001.png",
@@ -11,6 +12,7 @@
     },
     {
       "cid": 2,
+      "type": "attack",
       "nameTh": "ตีปิงปองลูกน้ำแข็ง",
       "author": "Kris",
       "imagePath": "0002.png",

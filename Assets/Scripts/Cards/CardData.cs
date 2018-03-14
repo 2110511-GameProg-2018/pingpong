@@ -11,6 +11,9 @@ public class CardData {
     // Card name in Thai
     public string nameTh;
 
+    // Card Type
+    public string type;
+    
     // Author of card
     public string author;
 

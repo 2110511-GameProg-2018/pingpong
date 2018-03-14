@@ -22,7 +22,6 @@ public class CardConfigData {
             card_str += c.ToString() + ", ";
         }
         
-        
         return "CardConfigData[v" + version + " cards: " + card_str + "]";
     }
 
