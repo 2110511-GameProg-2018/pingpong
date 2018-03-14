@@ -1,26 +1,22 @@
-﻿{ 
+﻿{
   "version": "1.0.0",
-  "cards" : [
+  "cards": [
     {
-      "cid" : 1,
-      "nameTh" : "ตีปิงปองลูกไฟ",
-      "author" : "Kris",
-      "imagePath" : "0001.png",
-      "descriptionTh" : "ตีปิงปองแล้วทำให้สนามไหม้ในช่องที่ตี",
-      "effect": {
-        "eid" : 1
-      }
+      "cid": 1,
+      "nameTh": "ตีปิงปองลูกไฟ",
+      "author": "Kris",
+      "imagePath": "0001.png",
+      "descriptionTh": "ตีปิงปองแล้วทำให้สนามไหม้ในช่องที่ตี",
+      "effect": 1
     },
     {
-      "cid" : 2,
-      "nameTh" : "ตีปิงปองลูกน้ำแข็ง",
-      "author" : "Kris",
-      "imagePath" : "0002.png",
-      "descriptionTh" : "ตีปิงปองแล้วทำให้สนามแข็งในช่องที่ตี",
-      "effect": {
-        "eid" : 2
-      }
-    } 
+      "cid": 2,
+      "nameTh": "ตีปิงปองลูกน้ำแข็ง",
+      "author": "Kris",
+      "imagePath": "0002.png",
+      "descriptionTh": "ตีปิงปองแล้วทำให้สนามแข็งในช่องที่ตี",
+      "effect": 2
+    }
   ],
-  "cardsImageBasePath" : "asserts/sprites/cards/"
+  "cardsImageBasePath": "asserts/sprites/cards/"
 }
