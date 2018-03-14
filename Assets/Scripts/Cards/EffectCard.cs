@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectCard : BaseCard {
-
+public class EffectCard : BaseCard
+{
+    public EffectCard(CardData cardData) : base(cardData)
+    {
+    }
 }
