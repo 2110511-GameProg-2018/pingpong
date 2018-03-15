@@ -22,6 +22,9 @@ public class Ball : MonoBehaviour {
 		if (Input.GetKeyDown ("space")) {
 			speed += 1;
 		}
+		if (Input.GetKeyDown ("h")) {
+			ToggleSpeedText ();
+		}
 	}
 
 	float getSpeed(){
@@ -45,4 +48,8 @@ public class Ball : MonoBehaviour {
         speedText.text = "Ball speed: " + speed.ToString ();
 
     }
+
+	void ToggleSpeedText(){
+		speedText.enabled = !speedText.enabled;
+	}
 }
