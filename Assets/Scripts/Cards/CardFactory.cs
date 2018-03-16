@@ -4,26 +4,15 @@ using UnityEngine;
 
 
 // Singleton + Factory Design Pattern
-public class CardFactory {
+public class CardFactory : Monobehavior {
 
     // Member Variables
     private List<CardData> cardPrototypes;
 
-    
-    // Singleton Design Pattern
-    private static CardFactory _instance = new CardFactory();
-
-    public static CardFactory instance
-    {
-        get { return _instance; }
-    }
-
-    // Use private to hide this class from being created externally
-    private CardFactory()
+    public CardFactory()
     {
         cardPrototypes = new List<CardData>();
     }
-
 
     // Adds a new card prototype to internal list
     public void AddNewCardPrototype(CardData cd)
