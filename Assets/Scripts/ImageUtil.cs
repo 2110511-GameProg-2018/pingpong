@@ -17,4 +17,8 @@ public class ImageUtil{
         }
         return tex;
     }
+
+	public static Sprite LoadSprite(string filePath) {
+		return Resources.Load<Sprite> (filePath);
+	}
 }
