@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class BaseCard : MonoBehaviour, System.IComparable<BaseCard>
+public class BaseCard:  System.IComparable<BaseCard>
 {
     protected string cardName;
     protected int id;
