@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224312287729048072}
   - component: {fileID: 222033173973248862}
   - component: {fileID: 114829388178579510}
+  - component: {fileID: 114307724555534842}
   m_Layer: 5
   m_Name: Phase
   m_TagString: Untagged
@@ -45,6 +46,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114307724555534842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1458765335615708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b847c0e891e41cc9170651380bf42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114709140714660336
 MonoBehaviour:
   m_ObjectHideFlags: 1
