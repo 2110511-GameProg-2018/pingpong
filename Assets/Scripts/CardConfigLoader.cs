@@ -5,6 +5,8 @@ using System.IO;
 
 public class CardConfigLoader : MonoBehaviour {
 
+	GameObject object1;
+
 	// Use this for initialization
 	void Start () {
         string cardConfigJsonPath = Application.dataPath + "/Config/cards_config.json";
@@ -24,6 +26,12 @@ public class CardConfigLoader : MonoBehaviour {
 
         Debug.Log("CardFactory.GetNewCard(1) = " + CardFactory.instance.GetNewCard(1));
         Debug.Log("CardFactory.GetNewCard(2) = " + CardFactory.instance.GetNewCard(2));
+
+		// test create GameObject with BaseCardComponent **must change BaseCardComponent.card to public
+//		object1 = new GameObject ("card1");
+//		object1.AddComponent<BaseCardComponent> ().SetBaseCard(CardFactory.instance.GetNewCard(1));
+//		string test = object1.GetComponent<BaseCardComponent> ().card.ToString ();
+//		Debug.Log("BaseCardComponent.card = " + test);
     }
 	
 	// Update is called once per frame

@@ -4,7 +4,9 @@ using UnityEngine;
 
 
 // Singleton + Factory Design Pattern
-public class CardFactory : Monobehavior {
+public class CardFactory {
+
+	public static CardFactory instance = new CardFactory();
 
     // Member Variables
     private List<CardData> cardPrototypes;

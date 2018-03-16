@@ -24,8 +24,4 @@ public class CardManager {
         existingCards.Add(card);
     }
 
-    public void GetNewCard(int cid) {
-        existingCards.Add(card);
-        
-    }
 }
