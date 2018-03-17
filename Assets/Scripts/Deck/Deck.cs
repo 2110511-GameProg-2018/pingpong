@@ -55,6 +55,7 @@ public class Deck : MonoBehaviour {
 		cardObject.SetBackSprite (sprite.sprite);
 		cardObject.SetFrontSprite (card.GetSprite());
 		cardObject.transform.position = new Vector3 (transform.position.x, transform.position.y, 0);
+		cardObject.transform.rotation = Quaternion.Euler (0, 180, 0);
 
 		if (cards.Count <= 0) {
 			sprite.enabled = false;
