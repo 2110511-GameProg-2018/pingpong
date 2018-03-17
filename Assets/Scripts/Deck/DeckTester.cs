@@ -12,6 +12,7 @@ public class DeckTester : MonoBehaviour {
 	void Start () {
 		deck = Instantiate (deck);
 		hand = Instantiate (hand);
+		hand.SetSelectableType (true, false, false, false);
 	}
 	
 	// Update is called once per frame

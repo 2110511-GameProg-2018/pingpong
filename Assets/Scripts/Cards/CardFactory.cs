@@ -37,18 +37,27 @@ public class CardFactory {
             throw new CardException("Cannot find card with id = " + cid);
         } else
         {
+			BaseCard newCard;
             switch(c.type.ToLower())
             {
-                case "attack":
-                    return new AttackCard(c);
+				case "attack":
+					newCard = new AttackCard (c);
+					newCard.SetCardType (CardType.Attack);
+					return newCard;
                 case "defend":
                 case "defense":
-                    return new DefendCard(c);
+					newCard = new DefendCard (c);
+					newCard.SetCardType (CardType.Defend);
+					return newCard;
                 case "counter":
                 case "effect":
-                    return new EffectCard(c);
+					newCard = new EffectCard (c);
+					newCard.SetCardType (CardType.Effect);
+					return newCard;
                 case "serve":
-                    return new ServeCard(c);
+					newCard = new ServeCard (c);
+					newCard.SetCardType (CardType.Serve);
+					return newCard;
                 default:
                     throw new CardException("Unknown card type with type = " + c.type);
             }

@@ -8,10 +8,16 @@ public class BaseCardComponent : MonoBehaviour {
 	SpriteRenderer spriteRenderer;
 	Sprite frontSprite;
 	Sprite backSprite;
+	SpriteRenderer highlight;
 
 	// Use this for initialization
 	void Start () {
-		
+		GameObject child = new GameObject ("highlight");
+		child.transform.parent = transform;
+		child.transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z + 1);
+		highlight = child.AddComponent<SpriteRenderer> ();
+		highlight.sprite = Resources.Load<Sprite> ("Sprites/Cards/highlight");
+		highlight.enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +37,10 @@ public class BaseCardComponent : MonoBehaviour {
 		this.card = card;
 	}
 
+	public BaseCard GetBaseCard() {
+		return card;
+	}
+
 	public void SetSpriteRenderer(SpriteRenderer spriteRenderer) {
 		this.spriteRenderer = spriteRenderer;
 	}
@@ -41,5 +51,9 @@ public class BaseCardComponent : MonoBehaviour {
 
 	public void SetBackSprite(Sprite sprite) {
 		backSprite = sprite;
+	}
+
+	public void SetHighlight(bool b) {
+		highlight.enabled = b;
 	}
 }

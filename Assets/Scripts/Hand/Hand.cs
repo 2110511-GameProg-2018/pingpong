@@ -12,10 +12,12 @@ public class Hand : MonoBehaviour {
 	float lerpT = 1;
 
 	List<BaseCardComponent> cards = new List<BaseCardComponent> ();
-	Vector3[] newPosition = new Vector3[6];
-	Vector3[] oldPosition = new Vector3[6];
+	Vector3[] newPosition = new Vector3[10];
+	Vector3[] oldPosition = new Vector3[10];
 	Quaternion newRotation = Quaternion.identity;
-	Quaternion[] oldRotation = new Quaternion[6];
+	Quaternion[] oldRotation = new Quaternion[10];
+	BaseCardComponent highlightedCard;
+	bool[] selectableType = new bool[4];
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,34 @@ public class Hand : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		ArrangeCard ();
+		HandleInput ();
+	}
+
+	void HandleInput() {
+		if (highlightedCard != null) {
+			highlightedCard.SetHighlight (false);
+			highlightedCard = null;
+		}
+
+		Vector2 mousePosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
+		RaycastHit2D hitInfo = Physics2D.Raycast (mousePosition, Vector2.zero, 0, LayerMask.GetMask("Hand"));
+
+		if (hitInfo.collider != null) {
+			highlightedCard = hitInfo.collider.gameObject.GetComponent<BaseCardComponent> ();
+			if (selectableType[(int) highlightedCard.GetBaseCard().GetCardType()]) {
+				highlightedCard.SetHighlight (true);
+			}
+			else {
+				highlightedCard = null;
+			}
+		}
+	}
+
+	void ArrangeCard() {
+		if (arrangeFinish) {
+			return;
+		}
 		if (lerpT >= 1) {
 			for (int i = 0; i < cards.Count; i++) {
 				cards [i].transform.position = newPosition [i];
@@ -42,6 +72,9 @@ public class Hand : MonoBehaviour {
 
 	public void Insert(BaseCardComponent newCard) {
 		cards.Add (newCard);
+		newCard.transform.parent = transform;
+		BoxCollider2D collider = newCard.gameObject.AddComponent<BoxCollider2D> ();
+		collider.size = new Vector2 (cardWidth, cardHeight);
 
 		float middle = (cards.Count - 1) / 2f;
 		for (int i = 0; i < cards.Count; i++) {
@@ -51,5 +84,12 @@ public class Hand : MonoBehaviour {
 		}
 		lerpT = 0;
 		arrangeFinish = false;
+	}
+
+	public void SetSelectableType(bool attack, bool defend, bool effect, bool serve) {
+		selectableType [(int) CardType.Attack] = attack;
+		selectableType [(int) CardType.Defend] = defend;
+		selectableType [(int) CardType.Effect] = effect;
+		selectableType [(int) CardType.Serve] = serve;
 	}
 }

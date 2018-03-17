@@ -48,6 +48,7 @@ public class Deck : MonoBehaviour {
 
 		BaseCard card = cards[0];
 		cards.RemoveAt (0);
+
 		cardObject = new GameObject ("card" + count).AddComponent<BaseCardComponent> ();
 		spriteRenderer = cardObject.gameObject.AddComponent<SpriteRenderer> ();
 		cardObject.SetBaseCard (card);
@@ -56,6 +57,7 @@ public class Deck : MonoBehaviour {
 		cardObject.SetFrontSprite (card.GetSprite());
 		cardObject.transform.position = new Vector3 (transform.position.x, transform.position.y, 0);
 		cardObject.transform.rotation = Quaternion.Euler (0, 180, 0);
+		cardObject.gameObject.layer = 8;//Hand Layer
 
 		if (cards.Count <= 0) {
 			sprite.enabled = false;

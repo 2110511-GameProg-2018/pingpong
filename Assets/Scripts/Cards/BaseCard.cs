@@ -10,6 +10,7 @@ public class BaseCard:  System.IComparable<BaseCard>
     protected Sprite image;
     protected string description;
     protected float ballSpeed;
+	protected CardType cardType;
 
     // Generic Constructor //
     public BaseCard(string cardName, int id, Sprite image, string description, float ballSpeed)
@@ -44,5 +45,13 @@ public class BaseCard:  System.IComparable<BaseCard>
 
 	public Sprite GetSprite() {
 		return image;
+	}
+
+	public void SetCardType(CardType cardType) {
+		this.cardType = cardType;
+	}
+
+	public CardType GetCardType() {
+		return cardType;
 	}
 }
