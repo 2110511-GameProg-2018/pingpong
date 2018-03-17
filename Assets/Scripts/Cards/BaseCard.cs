@@ -41,4 +41,8 @@ public class BaseCard:  System.IComparable<BaseCard>
     {
         return "BaseCard[id=" + id + ", cardName=" + cardName + "]";
     }
+
+	public Sprite GetSprite() {
+		return image;
+	}
 }

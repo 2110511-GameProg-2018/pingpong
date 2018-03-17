@@ -19,6 +19,6 @@ public class ImageUtil{
     }
 
 	public static Sprite LoadSprite(string filePath) {
-		return Resources.Load<Sprite> (filePath);
+		return Resources.Load<Sprite> ("Sprites/Cards/" + filePath.Substring(0, filePath.IndexOf('.')));
 	}
 }
