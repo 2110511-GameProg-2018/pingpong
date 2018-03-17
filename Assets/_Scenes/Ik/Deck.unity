@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 114527755141092882, guid: 43b8b45398ab56e468250bd6909de85d, type: 2}
+  hand: {fileID: 114281611164588704, guid: 5c01b6ed8d3979d409837983777f119d, type: 2}
 --- !u!4 &478320347
 Transform:
   m_ObjectHideFlags: 0

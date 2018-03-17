@@ -5,11 +5,13 @@ using UnityEngine;
 public class DeckTester : MonoBehaviour {
 
 	public Deck deck;
+	public Hand hand;
 	int[] cardIDs = { 1, 2, 1, 2, 2 };
 
 	// Use this for initialization
 	void Start () {
 		deck = Instantiate (deck);
+		hand = Instantiate (hand);
 	}
 	
 	// Update is called once per frame
@@ -18,7 +20,10 @@ public class DeckTester : MonoBehaviour {
 			deck.Shuffle ();
 		}
 		if (Input.GetKeyDown(KeyCode.D)) {
-			deck.PopTopCard ();
+			BaseCardComponent card = deck.PopTopCard ();
+			if (card != null) {
+				hand.Insert(card);
+			}
 		}
 		if (Input.GetKeyDown(KeyCode.L)) {
 			deck.LoadDeck (cardIDs);
