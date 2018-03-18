@@ -42,7 +42,7 @@ public class EffectDatabase {
 		return new IEffect (EID, effects[EID], parameters);
 	}
 
-	public IFutureEffect GetIFutureEffect(int EID, int[] parameters, int turnDelay, Phase phase) {
+	public IFutureEffect GetIFutureEffect(int EID, int[] parameters, int turnDelay, InnerPhase phase) {
 		return new IFutureEffect (EID, effects[EID], parameters, turnDelay, phase);
 	}
 }

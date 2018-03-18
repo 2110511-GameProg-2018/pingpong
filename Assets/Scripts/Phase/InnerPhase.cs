@@ -1,0 +1,24 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum InnerPhase {
+	INITIATE_GAME			= 0,
+	STANDBY					= 1,
+	DRAW					= 2,
+	DEFEND_STANDBY			= 3,
+	DEFEND_CARD_SELECT		= 4,
+	DEFEND_CARD_EXECUTION	= 5,
+	DEFEND_FIELD_DIRECTION	= 6,
+	CONDITION_STANDBY		= 7,
+	CONDITION_CARD_SELECT	= 8,
+	CONDITION_CARD_EXECUTION= 9,
+	ATTACK_STANDBY			= 10,
+	ATTACK_CARD_SELECT		= 11,
+	ATTACK_CARD_EXECUTION	= 12,
+	ATTACK_FIELD_DIRECTION	= 13,
+	SIMPLE_ATTACK			= 14,
+	LOSE					= 15,
+	END						= 16,
+	ERROR					= 17
+}

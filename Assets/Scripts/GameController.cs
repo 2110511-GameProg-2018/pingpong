@@ -3,17 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-
-    private enum InnerPhase
-    {
-        INITIATE_GAME, STANDBY, DRAW,
-        DEFEND_STANDBY, DEFEND_CARD_SELECT, DEFEND_CARD_EXECUTION, DEFEND_FIELD_DIRECTION,
-        CONDITION_STANDBY, CONDITION_CARD_SELECT, CONDITION_CARD_EXECUTION,
-        ATTACK_STANDBY, ATTACK_CARD_SELECT, ATTACK_CARD_EXECUTION, ATTACK_FIELD_DIRECTION,
-        SIMPLE_ATTACK, LOSE, END,
-        ERROR
-    }
-
+	
     InnerPhase currentPhase;
     PhaseModel pm = GameObject.FindObjectOfType<PhaseModel>();
     

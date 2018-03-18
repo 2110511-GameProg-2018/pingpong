@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class IFutureEffect : IEffect {
 
-    Phase activationPhase;
+	InnerPhase activationPhase;
 	int turnDelay;
 
-	public IFutureEffect(int EID, ExecuteEffect effect, int[] parameters, int turnDelay, Phase activationPhase) : base(EID, effect, parameters)
+	public IFutureEffect(int EID, ExecuteEffect effect, int[] parameters, int turnDelay, InnerPhase activationPhase) : base(EID, effect, parameters)
     {
         this.activationPhase = activationPhase;
 		this.turnDelay = turnDelay;
@@ -20,6 +20,10 @@ public class IFutureEffect : IEffect {
 
 	public void FutureExecute() {
 		base.Execute ();
+	}
+
+	public InnerPhase GetPhase() {
+		return activationPhase;
 	}
 
 }
