@@ -12,7 +12,7 @@ public class DeckTester : MonoBehaviour {
 	void Start () {
 		deck = Instantiate (deck);
 		hand = Instantiate (hand);
-		hand.SetSelectableType (true, false, false, false);
+		hand.SetSelectableType (false, false, false, false);
 	}
 	
 	// Update is called once per frame
@@ -28,6 +28,18 @@ public class DeckTester : MonoBehaviour {
 		}
 		if (Input.GetKeyDown(KeyCode.L)) {
 			deck.LoadDeck (cardIDs);
+		}
+		if (Input.GetKeyDown(KeyCode.E)) {
+			if (hand.IsArrangeFinish()) {
+				hand.SetSelectableType (true, false, false, false);
+			}
+		}
+
+		if (hand.GetSelectedCard() != null) {
+			Debug.Log ("DeckTester/Update : " + hand.GetSelectedCard().GetBaseCard().ToString());
+			hand.Remove (hand.GetSelectedCard());
+			hand.GetSelectedCard ().gameObject.SetActive (false);
+			hand.SetSelectableType (false, false, false, false);
 		}
 	}
 }

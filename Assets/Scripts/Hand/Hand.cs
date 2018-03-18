@@ -19,6 +19,8 @@ public class Hand : MonoBehaviour {
 	BaseCardComponent highlightedCard;
 	bool[] selectableType = new bool[4];
 
+	BaseCardComponent selectedCard;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -48,6 +50,10 @@ public class Hand : MonoBehaviour {
 				highlightedCard = null;
 			}
 		}
+
+		if (Input.GetMouseButtonDown(0) && selectedCard == null) {
+			selectedCard = highlightedCard;
+		}
 	}
 
 	void ArrangeCard() {
@@ -70,12 +76,7 @@ public class Hand : MonoBehaviour {
 		}
 	}
 
-	public void Insert(BaseCardComponent newCard) {
-		cards.Add (newCard);
-		newCard.transform.parent = transform;
-		BoxCollider2D collider = newCard.gameObject.AddComponent<BoxCollider2D> ();
-		collider.size = new Vector2 (cardWidth, cardHeight);
-
+	void SetArrangePosition() {
 		float middle = (cards.Count - 1) / 2f;
 		for (int i = 0; i < cards.Count; i++) {
 			oldPosition[i] = cards [i].transform.position;
@@ -86,10 +87,38 @@ public class Hand : MonoBehaviour {
 		arrangeFinish = false;
 	}
 
+	public void Remove(BaseCardComponent removedCard) {
+		if (cards.Remove (removedCard)) {
+			removedCard.transform.parent = transform.parent;
+		}
+
+		SetArrangePosition ();
+	}
+
+	public void Insert(BaseCardComponent newCard) {
+		cards.Add (newCard);
+		newCard.transform.parent = transform;
+		BoxCollider2D collider = newCard.gameObject.AddComponent<BoxCollider2D> ();
+		collider.size = new Vector2 (cardWidth, cardHeight);
+
+		SetArrangePosition ();
+	}
+
 	public void SetSelectableType(bool attack, bool defend, bool effect, bool serve) {
 		selectableType [(int) CardType.Attack] = attack;
 		selectableType [(int) CardType.Defend] = defend;
 		selectableType [(int) CardType.Effect] = effect;
 		selectableType [(int) CardType.Serve] = serve;
+
+		selectedCard = null;
 	}
+
+	public BaseCardComponent GetSelectedCard() {
+		return selectedCard;
+	}
+	
+	public bool IsArrangeFinish() {
+		return arrangeFinish;
+	}
+
 }
