@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EffectCollector{
-    public Dictionary<Phase, Queue<IEffect>> thisTurnEffect;
-    public Dictionary<Phase, Queue<IEffect>> nextTurnEffect;
+    public Dictionary<Phase, Queue<IEffect>> thisTurnEffect = new Dictionary<Phase, Queue<IEffect>>();
+    public Dictionary<Phase, Queue<IEffect>> nextTurnEffect = new Dictionary<Phase, Queue<IEffect>>();
 
     public void AddNextTurnEffect(IFutureEffect effect)
     {
