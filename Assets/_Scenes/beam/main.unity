@@ -1474,6 +1474,11 @@ Prefab:
       propertyPath: m_Name
       value: AttackText
       objectReference: {fileID: 0}
+    - target: {fileID: 114709140714660336, guid: 73d0ee27437a34726b8798a769bfdd4b,
+        type: 2}
+      propertyPath: m_Text
+      value: Attack
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 73d0ee27437a34726b8798a769bfdd4b, type: 2}
   m_IsPrefabParent: 0
