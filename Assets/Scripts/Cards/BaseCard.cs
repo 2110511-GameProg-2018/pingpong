@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class BaseCard : MonoBehaviour, System.IComparable<BaseCard>
+public class BaseCard:  System.IComparable<BaseCard>
 {
     protected string cardName;
     protected int id;
     protected Sprite image;
     protected string description;
     protected float ballSpeed;
+	protected CardType cardType;
 
     // Generic Constructor //
     public BaseCard(string cardName, int id, Sprite image, string description, float ballSpeed)
@@ -41,4 +42,16 @@ public class BaseCard : MonoBehaviour, System.IComparable<BaseCard>
     {
         return "BaseCard[id=" + id + ", cardName=" + cardName + "]";
     }
+
+	public Sprite GetSprite() {
+		return image;
+	}
+
+	public void SetCardType(CardType cardType) {
+		this.cardType = cardType;
+	}
+
+	public CardType GetCardType() {
+		return cardType;
+	}
 }
