@@ -10,6 +10,7 @@ public class Hand : MonoBehaviour {
 
 	bool arrangeFinish = true;
 	float lerpT = 1;
+	float lerpSpeed = 1;
 
 	List<BaseCardComponent> cards = new List<BaseCardComponent> ();
 	Vector3[] newPosition = new Vector3[10];
@@ -72,7 +73,7 @@ public class Hand : MonoBehaviour {
 				cards [i].transform.position = Vector3.Lerp (oldPosition [i], newPosition [i], lerpT);
 				cards [i].transform.rotation = Quaternion.Lerp (oldRotation [i], newRotation, lerpT);
 			}
-			lerpT += Time.deltaTime;
+			lerpT += Time.deltaTime * lerpSpeed;
 		}
 	}
 
@@ -87,12 +88,16 @@ public class Hand : MonoBehaviour {
 		arrangeFinish = false;
 	}
 
-	public void Remove(BaseCardComponent removedCard) {
+	public bool Remove(BaseCardComponent removedCard) {
 		if (cards.Remove (removedCard)) {
 			removedCard.transform.parent = transform.parent;
+
+			SetArrangePosition ();
+			lerpSpeed = 3;
+			return true;
 		}
 
-		SetArrangePosition ();
+		return false;
 	}
 
 	public void Insert(BaseCardComponent newCard) {
@@ -102,6 +107,7 @@ public class Hand : MonoBehaviour {
 		collider.size = new Vector2 (cardWidth, cardHeight);
 
 		SetArrangePosition ();
+		lerpSpeed = 1;
 	}
 
 	public void SetSelectableType(bool attack, bool defend, bool effect, bool serve) {
