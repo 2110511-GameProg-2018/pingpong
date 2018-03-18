@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IEffect
-{
-    public int effectType;
-    //1 change speed
-    //2 other
-    public int effectParameter;
-    public int turn;
+public class IEffect {
 
-    public IEffect(int effectType, int effectParameter,int turn)
-    {
-        this.effectType = effectType;
-        this.effectParameter = effectParameter;
-        this.turn = turn;
-    }
+	protected int EID;
+	protected ExecuteEffect effect;
+	protected int[] parameters;
+
+	public IEffect(int EID, ExecuteEffect effect, int[] parameters) {
+		this.EID = EID;
+		this.effect = effect;
+		this.parameters = parameters;
+	}
+
+	public virtual void Execute() {
+		effect (parameters);
+	}
 }

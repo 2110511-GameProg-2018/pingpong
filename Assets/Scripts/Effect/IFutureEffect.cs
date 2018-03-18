@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class IFutureEffect : IEffect {
 
-    public Phase activationPhase;
+    Phase activationPhase;
+	int turnDelay;
 
-    public IFutureEffect(int effectType, int effectParameter, int turn, Phase activationPhase) : base(effectType, effectParameter, turn)
+	public IFutureEffect(int EID, ExecuteEffect effect, int[] parameters, int turnDelay, Phase activationPhase) : base(EID, effect, parameters)
     {
         this.activationPhase = activationPhase;
+		this.turnDelay = turnDelay;
     }
+
+	public override void Execute ()
+	{
+		//will be implemented in future
+	}
+
+	public void FutureExecute() {
+		base.Execute ();
+	}
 
 }
