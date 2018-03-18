@@ -24,7 +24,9 @@ public class CardData {
     public string descriptionTh;
 
     // id of associated effect
-    public int effect;
+    public int effectID;
+
+	public int[] parameters;
 
     public override string ToString()
     {

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectDatabase {
+public class EffectFactory {
 
-	public static EffectDatabase instance = new EffectDatabase ();
+	public static EffectFactory instance = new EffectFactory ();
 
 	List<ExecuteEffect> effects;
 
-	EffectDatabase() {
+	EffectFactory() {
 		effects = new List<ExecuteEffect> ();
 		LoadEffect ();
 	}
@@ -25,7 +25,7 @@ public class EffectDatabase {
 
 	void LoadEffect() {
 		effects.Add (delegate(int[] parameters) {
-			Debug.Log("EffectFactory/LoadEffect : this is effect 0");
+			Debug.Log("EffectFactory/LoadEffect : this is effect 0 with parameter = " + parameters[0]);
 		});
 		effects.Add (delegate(int[] parameters) {
 			Debug.Log("EffectFactory/LoadEffect : this is effect 1");

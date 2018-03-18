@@ -281,6 +281,8 @@ public class GameController : MonoBehaviour {
 	}
     private void defendCardExecution()
     {
+		selectedCard.Use ();
+		GameObject.Destroy (selectedCard.gameObject);
 		selectedCard = null;
     }
 	private void setDefendField()
@@ -309,6 +311,8 @@ public class GameController : MonoBehaviour {
 	}
     private void conditionCardExecution()
     {
+		selectedCard.Use ();
+		GameObject.Destroy (selectedCard.gameObject);
 		selectedCard = null;
     }
     private void attackStandby()
@@ -325,6 +329,8 @@ public class GameController : MonoBehaviour {
 	}
     private void attackCardExecution()
     {
+		selectedCard.Use ();
+		GameObject.Destroy (selectedCard.gameObject);
 		selectedCard = null;
     }
 	private void setAttackField()

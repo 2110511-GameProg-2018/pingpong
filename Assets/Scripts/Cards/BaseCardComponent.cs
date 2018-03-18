@@ -56,4 +56,8 @@ public class BaseCardComponent : MonoBehaviour {
 	public void SetHighlight(bool b) {
 		highlight.enabled = b;
 	}
+
+	public void Use() {
+		card.Use ();
+	}
 }

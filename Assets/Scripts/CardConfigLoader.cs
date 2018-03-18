@@ -9,7 +9,7 @@ public class CardConfigLoader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        string cardConfigJsonPath = Application.dataPath + "/Config/cards_config.json";
+        string cardConfigJsonPath = Application.dataPath + "/Config/cards_config_v2.json";
         if (File.Exists(cardConfigJsonPath))
         {
             string dataAsJson = File.ReadAllText(cardConfigJsonPath);

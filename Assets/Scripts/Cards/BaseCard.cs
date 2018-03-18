@@ -11,6 +11,7 @@ public class BaseCard:  System.IComparable<BaseCard>
     protected string description;
     protected float ballSpeed;
 	protected CardType cardType;
+	protected IEffect effect;
 
     // Generic Constructor //
     public BaseCard(string cardName, int id, Sprite image, string description, float ballSpeed)
@@ -30,6 +31,7 @@ public class BaseCard:  System.IComparable<BaseCard>
         this.image = ImageUtil.LoadSprite(cardData.imagePath);
         this.description = cardData.descriptionTh;
         this.ballSpeed = 0; // TODO Unimplemented
+		this.effect = EffectFactory.instance.GetIEffect(cardData.effectID, cardData.parameters);
     }
     
     public int CompareTo(BaseCard other)
@@ -53,5 +55,9 @@ public class BaseCard:  System.IComparable<BaseCard>
 
 	public CardType GetCardType() {
 		return cardType;
+	}
+
+	public void Use() {
+		effect.Execute ();
 	}
 }
