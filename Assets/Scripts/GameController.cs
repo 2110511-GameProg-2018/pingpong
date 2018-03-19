@@ -7,12 +7,16 @@ public class GameController : MonoBehaviour {
 	public Player player;
 	public Field field;
 	
-    InnerPhase currentPhase;
-    PhaseModel pm;
+    private InnerPhase currentPhase;
+    private PhaseModel pm;
     
     // Use this for initialization
     void Start () {
 		pm = GameObject.FindObjectOfType<PhaseModel> ();
+        if (pm == null)
+        {
+            Debug.LogError("Cannot find any PhaseModels in Scene. Please add a PhaseModel and try again.");
+        }
         currentPhase = InnerPhase.INITIATE_GAME;
     }
 	
@@ -40,6 +44,7 @@ public class GameController : MonoBehaviour {
                 }
                 break;
             case InnerPhase.DRAW:
+                pm.currentPhase = Phase.DRAW;
                 draw();
 				if (!canDrawCard)
                 {
@@ -60,6 +65,7 @@ public class GameController : MonoBehaviour {
 				}
 				break;
             case InnerPhase.DEFEND_STANDBY:
+                pm.currentPhase = Phase.DEFEND;
                 defendStandby();
                 nextPhase = InnerPhase.DEFEND_CARD_SELECT;
                 break;
@@ -97,6 +103,7 @@ public class GameController : MonoBehaviour {
 				nextPhase = InnerPhase.DEFEND_FIELD_DIRECTION;
 				break;
             case InnerPhase.DEFEND_FIELD_DIRECTION:
+                pm.currentPhase = Phase.GUESS;
                 defendFieldDirection();
 				if (defendDirection != Direction.NONE /* Direction is selected */ )
                 {
@@ -121,6 +128,7 @@ public class GameController : MonoBehaviour {
                 }
                 break;
             case InnerPhase.CONDITION_STANDBY:
+                pm.currentPhase = Phase.COUNTER;
                 conditionStandby();
                 nextPhase = InnerPhase.CONDITION_CARD_SELECT;
                 break;
@@ -134,6 +142,7 @@ public class GameController : MonoBehaviour {
                     }
 					else if (selectedCard.GetBaseCard().GetCardType() == CardType.Attack /* card is attack card */ )
                     {
+                        pm.currentPhase = Phase.ATTACK;
 						nextPhase = InnerPhase.ATTACK_CARD_SELECTING;
                     }
                     else
@@ -168,6 +177,7 @@ public class GameController : MonoBehaviour {
                 nextPhase = InnerPhase.ATTACK_STANDBY;
                 break;
             case InnerPhase.ATTACK_STANDBY:
+                pm.currentPhase = Phase.ATTACK;
                 attackStandby();
                 nextPhase = InnerPhase.ATTACK_CARD_SELECT;
                 break;
@@ -232,6 +242,7 @@ public class GameController : MonoBehaviour {
                 Debug.Log("Player Lost!");
                 break;
             case InnerPhase.END:
+                pm.currentPhase = Phase.END;
                 end();
                 nextPhase = InnerPhase.STANDBY;
                 break;
