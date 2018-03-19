@@ -48,6 +48,13 @@ sysinfo.txt
 *.resources
 test-results/
 
+### Visual Studio Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/lanuch.json
+!.vscode/extensions.json
+.history
 
 ### Linux ###
 *~
