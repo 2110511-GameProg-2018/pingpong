@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PhaseDisplayController : MonoBehaviour {
     public PhaseModel pm;
 	private Phase selectedPhase;
+
 	public PhaseComponent Stand_by;
 	public PhaseComponent Draw;
 	public PhaseComponent Defend;
