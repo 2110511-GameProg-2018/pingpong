@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PhaseDisplayController : MonoBehaviour {
-	public Phase selectedPhase;
+    public PhaseModel pm;
+	private Phase selectedPhase;
 	public PhaseComponent Stand_by;
 	public PhaseComponent Draw;
 	public PhaseComponent Defend;
@@ -17,7 +18,12 @@ public class PhaseDisplayController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		selectedPhase = Phase.STAND_BY;
+        if (pm == null)
+        {
+            Debug.LogError("PhaseModel is not set. Please add a PhaseModel and try again.");
+        }
+
+        selectedPhase = pm.currentPhase;
 		parent = GetComponent<RectTransform> ();
 		grid = GetComponent<GridLayoutGroup> ();
 		DynamicGrid ();
@@ -27,7 +33,8 @@ public class PhaseDisplayController : MonoBehaviour {
 	void Update () {
 		DynamicGrid ();
 		ClearState ();
-		switch (selectedPhase) {
+        selectedPhase = pm.currentPhase;
+        switch (selectedPhase) {
 			case Phase.STAND_BY:
 				Stand_by.setState (true);
 				break;
