@@ -27,11 +27,11 @@ public class Ball : MonoBehaviour {
 		}
 	}
 
-	float getSpeed(){
+	public float getSpeed(){
 		return speed;
 	}
 
-	void setSpeed(float new_speed){
+	public void setSpeed(float new_speed){
 		speed = new_speed;
 	}
 
