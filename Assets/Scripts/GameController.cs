@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
-	public Player player;
+	public Player p1;
+	public Player p2;
 	public Field field;
 	public Ball ball;
 	public Button skipDefendButton;
 	public Button simpleAttackButton;
 	
+	private Player currentPlayer;
     private InnerPhase currentPhase;
     private PhaseModel pm;
     
@@ -61,7 +63,7 @@ public class GameController : MonoBehaviour {
                 break;
 			case InnerPhase.DRAWING:
 				drawing ();
-				if (!player.IsDrawFinished())
+				if (!currentPlayer.IsDrawFinished())
 				{
 					nextPhase = InnerPhase.DRAWING;
 				} else
@@ -84,7 +86,7 @@ public class GameController : MonoBehaviour {
                 {
 					skipDefendButton.gameObject.SetActive (false);
 					skipDefend = false;
-					player.SetHandSelectableType (false, false, false, false);
+					currentPlayer.SetHandSelectableType (false, false, false, false);
 					nextPhase = InnerPhase.SET_DEFEND_FIELD;
                 } else
                 {
@@ -93,9 +95,9 @@ public class GameController : MonoBehaviour {
                 break;
 			case InnerPhase.DEFEND_CARD_SELECTING:
 				defendCardSelecting();
-				if (player.IsSelectFinished())
+				if (currentPlayer.IsSelectFinished())
 				{
-					player.SetHandSelectableType (false, false, false, false);
+					currentPlayer.SetHandSelectableType (false, false, false, false);
 					nextPhase = InnerPhase.DEFEND_CARD_EXECUTION;
 				} else
 				{
@@ -162,7 +164,7 @@ public class GameController : MonoBehaviour {
                 }
 				else if (ngoAttack /* Simple Attack button pressed */)
                 {
-					player.SetHandSelectableType (false, false, false, false);
+					currentPlayer.SetHandSelectableType (false, false, false, false);
 					ngoAttack = false;
 					simpleAttackButton.gameObject.SetActive (false);
                     nextPhase = InnerPhase.SIMPLE_ATTACK;
@@ -174,9 +176,9 @@ public class GameController : MonoBehaviour {
                 break;
 			case InnerPhase.CONDITION_CARD_SELECTING:
 				conditionCardSelecting();
-				if (player.IsSelectFinished())
+				if (currentPlayer.IsSelectFinished())
 				{
-					player.SetHandSelectableType (false, false, false, false);
+					currentPlayer.SetHandSelectableType (false, false, false, false);
 					nextPhase = InnerPhase.CONDITION_CARD_EXECUTION;
 				} else
 				{
@@ -207,7 +209,7 @@ public class GameController : MonoBehaviour {
 					simpleAttackButton.gameObject.SetActive (false);
 				} else if (ngoAttack /* simple attack button is pressed */ )
                 {
-					player.SetHandSelectableType (false, false, false, false);
+					currentPlayer.SetHandSelectableType (false, false, false, false);
 					simpleAttackButton.gameObject.SetActive (false);
 					ngoAttack = false;
                     nextPhase = InnerPhase.SIMPLE_ATTACK;
@@ -218,9 +220,9 @@ public class GameController : MonoBehaviour {
                 break;
 			case InnerPhase.ATTACK_CARD_SELECTING:
 				attackCardSelecting();
-				if (player.IsSelectFinished())
+				if (currentPlayer.IsSelectFinished())
 				{
-					player.SetHandSelectableType (false, false, false, false);
+					currentPlayer.SetHandSelectableType (false, false, false, false);
 					nextPhase = InnerPhase.ATTACK_CARD_EXECUTION;
 				} else
 				{
@@ -272,9 +274,12 @@ public class GameController : MonoBehaviour {
 
     private void initializeGame()
     {
-		player.Initialize ();
+		p1.Initialize ();
+		p2.Initialize ();
 		field.gameObject.SetActive (false);
-		ball.setSpeed(0); 
+		ball.setSpeed(0);
+		currentPlayer = p1;
+		p2.gameObject.SetActive (false);
     }
     private void standby()
     {
@@ -284,7 +289,7 @@ public class GameController : MonoBehaviour {
 	bool canDrawCard = true;
     private void draw()
     {
-		canDrawCard = player.Draw ();
+		canDrawCard = currentPlayer.Draw ();
     }
 
 	private void drawing()
@@ -295,12 +300,12 @@ public class GameController : MonoBehaviour {
     private void defendStandby()
     {
 		skipDefendButton.gameObject.SetActive (true);
-		player.SetHandSelectableType (false, true, false, false);
+		currentPlayer.SetHandSelectableType (false, true, false, false);
     }
 	BaseCardComponent selectedCard;
     private void defendCardSelect()
     {
-		selectedCard = player.SelectCard ();
+		selectedCard = currentPlayer.SelectCard ();
     }
 	private void defendCardSelecting()
 	{
@@ -326,12 +331,12 @@ public class GameController : MonoBehaviour {
     private void conditionStandby()
     {
 		simpleAttackButton.gameObject.SetActive (true);
-		player.SetHandSelectableType (true, false, true, false);
+		currentPlayer.SetHandSelectableType (true, false, true, false);
     }
 
     private void conditionCardSelect()
     {
-		selectedCard = player.SelectCard ();
+		selectedCard = currentPlayer.SelectCard ();
     }
 	private void conditionCardSelecting()
 	{
@@ -346,11 +351,11 @@ public class GameController : MonoBehaviour {
     private void attackStandby()
     {
 		simpleAttackButton.gameObject.SetActive (true);
-		player.SetHandSelectableType (true, false, false, false);
+		currentPlayer.SetHandSelectableType (true, false, false, false);
     }
     private void attackCardSelect()
     {
-		selectedCard = player.SelectCard ();
+		selectedCard = currentPlayer.SelectCard ();
     }
 	private void attackCardSelecting()
 	{
@@ -382,7 +387,16 @@ public class GameController : MonoBehaviour {
     }
     private void end()
     {
-
+		if (currentPlayer == p1) {
+			currentPlayer = p2;
+			p2.gameObject.SetActive (true);
+			p1.gameObject.SetActive (false);
+		}
+		else {
+			currentPlayer = p1;
+			p1.gameObject.SetActive (true);
+			p2.gameObject.SetActive (false);
+		}
     }
 
 	bool skipDefend = false;

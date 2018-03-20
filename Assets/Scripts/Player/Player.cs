@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+	public int[] cardIDs = { 1, 2, 1, 2, 2 };
+
 	int score = 0;
-	int[] cardIDs = { 1, 2, 1, 2, 2 };
 	Deck deck;
 	Hand hand;
 
