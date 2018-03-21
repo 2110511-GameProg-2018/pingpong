@@ -394,6 +394,7 @@ public class GameController : MonoBehaviour {
     }
     private void end()
     {
+        turn += 1;
 		if (currentPlayer == p1) {
 			currentPlayer = p2;
 			p2.gameObject.SetActive (true);
