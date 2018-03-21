@@ -379,7 +379,7 @@ public class GameController : MonoBehaviour {
     }
     private void simpleAttack()
     {
-
+		ball.setSpeed (ball.getSpeed() + 1);
     }
     private void lose()
     {
