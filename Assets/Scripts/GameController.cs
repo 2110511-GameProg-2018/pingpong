@@ -11,12 +11,14 @@ public class GameController : MonoBehaviour {
 	public Ball ball;
 	public Button skipDefendButton;
 	public Button simpleAttackButton;
+    public BallIndicator ballIndicator;
 	
 	private Player currentPlayer;
     private InnerPhase currentPhase;
     private PhaseModel pm;
+
     public Text winText;
-    public int turn;
+    private int turn;
     
     // Use this for initialization
     void Start () {
@@ -72,7 +74,13 @@ public class GameController : MonoBehaviour {
 					nextPhase = InnerPhase.DRAWING;
 				} else
 				{
-					nextPhase = InnerPhase.DEFEND_STANDBY;
+					if (turn > 1) /* Not the first turn */
+                    {
+                        nextPhase = InnerPhase.DEFEND_STANDBY;
+                    } else /* If first turn, just skip the guessing and jump to the attack*/ 
+                    {
+                        nextPhase = InnerPhase.ATTACK_STANDBY;
+                    }
 				}
 				break;
             case InnerPhase.DEFEND_STANDBY:
@@ -121,11 +129,22 @@ public class GameController : MonoBehaviour {
                 defendFieldDirection();
 				if (defendDirection != Direction.NONE /* Direction is selected */ )
                 {
-					if (defendDirection == attackDirection || attackDirection == Direction.NONE /* guessed right */)
+                    ballIndicator.ShowIndicator(attackDirection);
+                    nextPhase = InnerPhase.DEFEND_SHOW_BALL_INDICATOR;
+                } else /* Direction is not selected */
+                {  
+                    nextPhase = InnerPhase.DEFEND_FIELD_DIRECTION;
+                }
+                break;
+            case InnerPhase.DEFEND_SHOW_BALL_INDICATOR:
+                if (Input.GetMouseButtonDown(0) /* Go next on mouse click */)
+                {
+                    ballIndicator.HideIndicator();
+                    if (defendDirection == attackDirection || attackDirection == Direction.NONE /* guessed right */)
                     {
                         nextPhase = InnerPhase.CONDITION_STANDBY;
                     }
-					else if (ball.getSpeed() < 10)
+                    else if (ball.getSpeed() < 10)
                     {
                         nextPhase = InnerPhase.ATTACK_STANDBY;
                     }
@@ -133,12 +152,13 @@ public class GameController : MonoBehaviour {
                     {
                         nextPhase = InnerPhase.LOSE;
                     }
-					attackDirection = Direction.NONE;
-					defendDirection = Direction.NONE;
-					field.gameObject.SetActive(false);
-                } else /* Direction is not selected */
-                {  
-                    nextPhase = InnerPhase.DEFEND_FIELD_DIRECTION;
+                    attackDirection = Direction.NONE;
+                    defendDirection = Direction.NONE;
+                    field.gameObject.SetActive(false);
+                }
+                else // User has not clicked then stay in same phase
+                {
+                    nextPhase = InnerPhase.DEFEND_SHOW_BALL_INDICATOR;
                 }
                 break;
             case InnerPhase.CONDITION_STANDBY:
@@ -404,6 +424,9 @@ public class GameController : MonoBehaviour {
 			p1.gameObject.SetActive (true);
 			p2.gameObject.SetActive (false);
 		}
+
+        // Increment the turn count
+        turn++;
     }
 
 	bool skipDefend = false;
