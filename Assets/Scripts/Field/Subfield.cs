@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Subfield : MonoBehaviour {
 
+    public Color avaliableFieldColor;
+    public Color unavaliableFieldColor;
+
 	bool state = true;
 	bool highlightState = false;
 
@@ -14,7 +17,7 @@ public class Subfield : MonoBehaviour {
 	void Start () {
 		state = true;
 		sprite = GetComponent<SpriteRenderer> ();
-		sprite.color = Color.green;
+		sprite.color = avaliableFieldColor;
 
 		highlightState = false;
 		foreach (SpriteRenderer sp in GetComponentsInChildren<SpriteRenderer> ()) {
@@ -36,10 +39,10 @@ public class Subfield : MonoBehaviour {
 
 		if (sprite != null) {
 			if (state) {
-				sprite.color = Color.green;
+				sprite.color = avaliableFieldColor;
 			} 
 			else {
-				sprite.color = Color.red;
+				sprite.color = unavaliableFieldColor;
 			}
 		}
 	}

@@ -7,9 +7,11 @@ public class EffectFactory {
 	public static EffectFactory instance = new EffectFactory ();
 
 	List<ExecuteEffect> effects;
+	GameController gc;
 
 	EffectFactory() {
 		effects = new List<ExecuteEffect> ();
+		gc = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameController> ();
 		LoadEffect ();
 	}
 
@@ -26,6 +28,7 @@ public class EffectFactory {
 	void LoadEffect() {
 		effects.Add (delegate(int[] parameters) {
 			Debug.Log("EffectFactory/LoadEffect : this is effect 0 with parameter = " + parameters[0]);
+			gc.ball.setSpeed(gc.ball.getSpeed() + parameters[0]);
 		});
 		effects.Add (delegate(int[] parameters) {
 			Debug.Log("EffectFactory/LoadEffect : this is effect 1");
