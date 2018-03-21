@@ -349,12 +349,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 1d155075e8fa1df40978bae45f4a850e, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -373,6 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b847c0e891e41cc9170651380bf42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalColor: {r: 0.9098039, g: 0.9098039, b: 0.9098039, a: 1}
+  selectedColor: {r: 0.4913495, g: 0.7178142, b: 0.9411765, a: 1}
 --- !u!114 &114181007187886132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -384,6 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b847c0e891e41cc9170651380bf42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalColor: {r: 0.9098039, g: 0.9098039, b: 0.9098039, a: 1}
+  selectedColor: {r: 0.4913495, g: 0.7178142, b: 0.9411765, a: 1}
 --- !u!114 &114206058302628422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,12 +408,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 1d155075e8fa1df40978bae45f4a850e, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -464,12 +468,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 1d155075e8fa1df40978bae45f4a850e, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -488,6 +492,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b847c0e891e41cc9170651380bf42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalColor: {r: 0.9098039, g: 0.9098039, b: 0.9098039, a: 1}
+  selectedColor: {r: 0.4913495, g: 0.7178142, b: 0.9411765, a: 1}
 --- !u!114 &114437603740171964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -508,12 +514,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 1d155075e8fa1df40978bae45f4a850e, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -541,12 +547,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 1d155075e8fa1df40978bae45f4a850e, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -565,6 +571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b847c0e891e41cc9170651380bf42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalColor: {r: 0.9098039, g: 0.9098039, b: 0.9098039, a: 1}
+  selectedColor: {r: 0.4913495, g: 0.7178142, b: 0.9411765, a: 1}
 --- !u!114 &114630019518650498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -653,6 +661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b847c0e891e41cc9170651380bf42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalColor: {r: 0.9117647, g: 0.9117647, b: 0.9117647, a: 1}
+  selectedColor: {r: 0.4913495, g: 0.7178142, b: 0.9411765, a: 1}
 --- !u!114 &114703738767495314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -664,6 +674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b847c0e891e41cc9170651380bf42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalColor: {r: 0.9098039, g: 0.9098039, b: 0.9098039, a: 1}
+  selectedColor: {r: 0.4913495, g: 0.7178142, b: 0.9411765, a: 1}
 --- !u!114 &114746145403800434
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -738,12 +750,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 1d155075e8fa1df40978bae45f4a850e, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -762,7 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12fac4ad669841e98310b45a02bca8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPhase: 0
+  pm: {fileID: 0}
   Stand_by: {fileID: 114693304078606824}
   Draw: {fileID: 114310187697511266}
   Defend: {fileID: 114703738767495314}
@@ -817,12 +829,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 1d155075e8fa1df40978bae45f4a850e, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 120
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -841,6 +853,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b847c0e891e41cc9170651380bf42f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalColor: {r: 0.9098039, g: 0.9098039, b: 0.9098039, a: 1}
+  selectedColor: {r: 0.4913495, g: 0.7178142, b: 0.9411765, a: 1}
 --- !u!222 &222227786264970860
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -1099,10 +1113,10 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 277.5824, y: -3.0857177}
-  m_SizeDelta: {x: -631.1, y: -32.1}
+  m_AnchorMin: {x: 0.75, y: 0.02}
+  m_AnchorMax: {x: 0.98, y: 0.98}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224506319979425086
 RectTransform:
