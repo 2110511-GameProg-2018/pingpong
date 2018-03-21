@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -9,9 +10,13 @@ public class GameController : MonoBehaviour {
 	
     private InnerPhase currentPhase;
     private PhaseModel pm;
+    public Text winText;
+    public int turn;
     
     // Use this for initialization
     void Start () {
+        winText.text = "";
+        turn = 1;
 		pm = GameObject.FindObjectOfType<PhaseModel> ();
         if (pm == null)
         {
@@ -360,7 +365,10 @@ public class GameController : MonoBehaviour {
     }
     private void lose()
     {
-
+        if(turn%2 == 1)
+            winText.text = "Player1 Win!!";
+        else
+            winText.text = "Player2 Win!!";
     }
     private void end()
     {
