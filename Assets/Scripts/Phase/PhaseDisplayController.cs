@@ -71,7 +71,7 @@ public class PhaseDisplayController : MonoBehaviour {
 	}
 
 	void DynamicGrid(){
-		grid.cellSize = new Vector2 (2 * parent.rect.width / 3, parent.rect.height / 8);
+		grid.cellSize = new Vector2 (9 * parent.rect.width / 10, parent.rect.height / 8);
 	}
 
 	public void setSelectedPhase(Phase newPhase){
