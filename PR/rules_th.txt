@@ -1,0 +1,65 @@
+﻿Pingpong Card Game
+
+Introduction
+Card Deck fix ไว้ที่ 15 ใบเท่านั้น ห้ามขาด ห้ามเกิน
+
+Card Types
+การ์ดที่ผู้เล่นใช้ได้มีทั้งหมด 3 ประเภทหลัก คือ
+Atk card
+Counter card
+Pre-Def card 
+Post-Def card
+Serve card
+
+Table Areas
+แทนพื้นที่ ที่จะเลือกตีลูกปิงปองลง 
+มีทั้งหมด 4 ที่คือ:
+หน้า (Front)
+ซ้าย (Left)
+ขวา (Right)
+หลัง (Back)
+
+Ball Speed
+แทนความเร็วของลูกปิงปองในการตีปิงปอง 
+ต่ำสุดคือ 0 ถ้า Ball speed <= 0 ในเทิร์นใครคนนั้นเสียแต้ม
+
+Phases
+Standby Phase
+Draw Phase - จั่วไพ่ 1 ใบเสมอ
+Counter Phase 1 - 
+Guess Phase - เลือกพื้นที่บนโต๊ะ แล้วเข้า Gussing Mechanism
+Counter Phase 2 - 
+Attack Phase -
+End Phase - ถ้ามีไพ่มากกว่า 5 ใบ ให้ทิ้งจนกว่าจะเหลือ 5 ใบ
+
+Attacking
+Attack Phase (หลัง Counter Phase 2)
+ใช้การ์ด Attack ในการตีกลับ
+ถ้าไม่มีการ์ด Attack หรือไม่อยากใช้การ์ด Attack สามารถเลือก ‘ตีโง่’ ได้ โดย ตีโง่ SPD +1 เสมอ และไม่สามารถเลือกด้านหลังได้
+
+Guessing Mechanism
+Guess Phase (หลัง Counter Phase 1)
+
+
+<0
+0-10
+11-15
+>15
+เดาผิด
+แพ้
+-
+แพ้
+เดาถูก
+ใช้ counter card ได้ 
+แพ้
+### ถ้า ball speed 0-5 สามารถเดาได้ 2 ทิศที่ติดกัน เช่น หน้าซ้าย หลังขวา แต่ไม่ใช่ซ้ายขวา ###
+
+Fatigue Mode
+ทุกฝ่ายทำการตีโง่เรื่อยๆจนจบ
+
+Miscellaneous
+
+
+
+
+
