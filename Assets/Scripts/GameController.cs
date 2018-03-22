@@ -408,9 +408,9 @@ public class GameController : MonoBehaviour {
     private void lose()
     {
         if(turn%2 == 1)
-            winText.text = "Player1 Win!!";
-        else
             winText.text = "Player2 Win!!";
+        else
+            winText.text = "Player1 Win!!";
     }
     private void end()
     {

@@ -40,24 +40,45 @@ public class Field : MonoBehaviour {
 //		Debug.Log ("Field/Update: mouse position = (" + mousePosition.x + ", " + mousePosition.y + ")");
 
 		Direction newCursorState = Direction.NONE;
-		if (mousePosition.x > width / 2f || mousePosition.x < -width / 2f ||
-		    mousePosition.y > height / 2f || mousePosition.y < -height / 2f) {
+		//version 1 mouse detection
+//		if (mousePosition.x > width / 2f || mousePosition.x < -width / 2f ||
+//		    mousePosition.y > height / 2f || mousePosition.y < -height / 2f) {
+//			newCursorState = Direction.NONE;
+//		}
+//		else {
+//			float m = height / width;
+//			bool posLine = mousePosition.y > m * mousePosition.x;
+//			bool negLine = mousePosition.y > -m * mousePosition.x;
+//			if (posLine && negLine) {
+//				newCursorState = Direction.FRONT;
+//			}
+//			else if (!posLine && negLine) {
+//				newCursorState = Direction.RIGHT;
+//			}
+//			else if (!posLine && !negLine) {
+//				newCursorState = Direction.BACK;
+//			}
+//			else if (posLine && !negLine) {
+//				newCursorState = Direction.LEFT;
+//			}
+//		}
+		//version 2 mouse detection
+		RaycastHit2D hitInfo = Physics2D.Raycast (mousePosition, Vector2.zero, 0, LayerMask.GetMask("Field"));
+
+		if (hitInfo.collider == null) {
 			newCursorState = Direction.NONE;
 		}
 		else {
-			float m = height / width;
-			bool posLine = mousePosition.y > m * mousePosition.x;
-			bool negLine = mousePosition.y > -m * mousePosition.x;
-			if (posLine && negLine) {
+			if (hitInfo.collider.gameObject == frontField.gameObject) {
 				newCursorState = Direction.FRONT;
 			}
-			else if (!posLine && negLine) {
+			else if (hitInfo.collider.gameObject == rightField.gameObject) {
 				newCursorState = Direction.RIGHT;
 			}
-			else if (!posLine && !negLine) {
+			else if (hitInfo.collider.gameObject == backField.gameObject) {
 				newCursorState = Direction.BACK;
 			}
-			else if (posLine && !negLine) {
+			else if (hitInfo.collider.gameObject == leftField.gameObject) {
 				newCursorState = Direction.LEFT;
 			}
 		}

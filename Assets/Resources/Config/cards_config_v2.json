@@ -1,0 +1,606 @@
+﻿{
+  "version": "2.0.0",
+  "cards": [
+    {
+      "cid": 1,
+      "type": "attack",
+      "nameTh": "ลูกธรรมดา",
+      "author": "Beam",
+      "imagePath": "0001.png",
+      "descriptionTh": "-",
+      "effectID": 0,
+      "parameters": [3]
+    },
+    {
+      "cid": 2,
+      "type": "attack",
+      "nameTh": "ลูกยิงปืนนัดเดียวได้แต้ม2แต้ม",
+      "author": "Beam",
+      "imagePath": "0002.png",
+      "descriptionTh": "หากใช้ไพ่นี้แล้วชนะในตาต่อไป point +2",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 3,
+      "type": "attack",
+      "nameTh": "ลูกตบสุดแรงเกิด",
+      "author": "Beam",
+      "imagePath": "0003.png",
+      "descriptionTh": "เลือกทิ้งไพ่ในมือฝ่ายตรงข้ามได้ 1 ใบ",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 4,
+      "type": "attack",
+      "nameTh": "ลูกซ้อม",
+      "author": "Beam",
+      "imagePath": "0004.png",
+      "descriptionTh": "ในตาต่อไปของทั้งฝั่งตรงข้ามและของเรา ไพ่ที่ใช้จะไม่ถูกทิ้ง",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 5,
+      "type": "attack",
+      "nameTh": "ลูก spin เปลี่ยนทิศทาง",
+      "author": "Beam",
+      "imagePath": "0005.png",
+      "descriptionTh": "ในตาต่อไป หากฝั่งตรงข้ามเดาทางถูก SPD รวม x 0.5 หากฝั่งตรงข้ามเดาทางผิด SPD รวม x 2 ",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 6,
+      "type": "attack",
+      "nameTh": "ลูกตีตรง",
+      "author": "Beam",
+      "imagePath": "0006.png",
+      "descriptionTh": "ในตาต่อไปของฝั่งตรงข้าม ทิศทางที่ต้องเดาจะมีแค่ front กับ back เท่านั้น",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 7,
+      "type": "effect",
+      "nameTh": "มองเห็นอนาคต",
+      "author": "Beam",
+      "imagePath": "0007.png",
+      "descriptionTh": "ในตาต่อไปของเรา ไม่ว่าจะเดาทางไหน จะถือว่าเดาถูกแน่นอน แต่ห้ามใช้ effect card ในตานั้นด้วย",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 8,
+      "type": "effect",
+      "nameTh": "ย้อนรอย",
+      "author": "Beam",
+      "imagePath": "0008.png",
+      "descriptionTh": "เลือก effect card 1 ใบที่เคยใช้ไปแล้วขึ้นมือ",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 9,
+      "type": "effect",
+      "nameTh": "เปลี่ยนแผน",
+      "author": "Beam",
+      "imagePath": "0009.png",
+      "descriptionTh": "เปลี่ยนไพ่ในมือทั้งหมดกับในกอง",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 10,
+      "type": "effect",
+      "nameTh": "ลูกเห็นผี.....โดนหลอก!!",
+      "author": "Beam",
+      "imagePath": "0010.png",
+      "descriptionTh": "ในตาต่อไปของฝั่งตรงข้าม ไม่ว่าจะเดาทางไหน จะถือว่าผิดแน่นอน",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 11,
+      "type": "effect",
+      "nameTh": "ลูกสวนเร็ว",
+      "author": "Beam",
+      "imagePath": "0011.png",
+      "descriptionTh": "ในตาต่อไปของฝั่งตรงข้าม effect ของไพ่จะไร้ผลทั้งหมด",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 12,
+      "type": "serve",
+      "nameTh": "ลูกเสิร์ฟธรรมดา",
+      "author": "Beam",
+      "imagePath": "0012.png",
+      "descriptionTh": "-",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 13,
+      "type": "serve",
+      "nameTh": "ลูกที่วางแผนมาอย่างดี",
+      "author": "Beam",
+      "imagePath": "0013.png",
+      "descriptionTh": "จั่วไฟ่ 2 ใบ",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 14,
+      "type": "serve",
+      "nameTh": "ลูกเสิร์ฟเปลี่ยนแผน",
+      "author": "Beam",
+      "imagePath": "0014.png",
+      "descriptionTh": "จั่วไพ่ขึ้นมา 3 ใบและคืนไพ่เข้ากอง 3 ใบ",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 15,
+      "type": "serve",
+      "nameTh": "ลูกเสิร์ฟเร็ว",
+      "author": "Beam",
+      "imagePath": "0015.png",
+      "descriptionTh": "ฝั่งตรงข้ามห้ามใช้ effect card ในตาต่อไป",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 17,
+      "type": "attack",
+      "nameTh": "Normal Attack",
+      "author": "IK",
+      "imagePath": "0017.png",
+      "descriptionTh": "Nothing!!",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 18,
+      "type": "attack",
+      "nameTh": "Pure Strength Attack",
+      "author": "IK",
+      "imagePath": "0018.png",
+      "descriptionTh": "ในเทิร์นหน้าเราใช้ไพ่ effect ไม่ได้",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 19,
+      "type": "attack",
+      "nameTh": "High Power Attack",
+      "author": "IK",
+      "imagePath": "0019.png",
+      "descriptionTh": "เลือก zone ที่จะตีได้แค่ Front เท่านั้น",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 20,
+      "type": "attack",
+      "nameTh": "Fused Attack",
+      "author": "IK",
+      "imagePath": "0020.png",
+      "descriptionTh": "ต้องทิ้งไพ่ Attack บนมือ 1 ใบ เพื่อใช้ไพ่ใบนี้",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 21,
+      "type": "attack",
+      "nameTh": "All-in Attack",
+      "author": "IK",
+      "imagePath": "0021.png",
+      "descriptionTh": "โยนเหรียญ ถ้าทายผิดแพ้ลูกนั้นทันที",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 22,
+      "type": "effect",
+      "nameTh": "Ultra Instinct",
+      "author": "IK",
+      "imagePath": "0022.png",
+      "descriptionTh": "เลือกไพ่ effect จากเด็คขึ้นมือได้ 1 ใบ และ ในเทิร์นหน้าเราสามารถเดาได้ 4 zone แต่จะไม่สามารถใช้ไพ่ effect ได้",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 23,
+      "type": "effect",
+      "nameTh": "Expertise Move",
+      "author": "IK",
+      "imagePath": "0023.png",
+      "descriptionTh": "เลือกไพ่ Attack 1 ใบ บนมือ ในเทิร์นนี้ เพิ่ม spd ของไพ่ใบนั้น 2 เท่า",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 24,
+      "type": "effect",
+      "nameTh": "Flash Back",
+      "author": "IK",
+      "imagePath": "0024.png",
+      "descriptionTh": "โยนเหรียญ ถ้าทายถูก สามารถใช้ไพ่ effect ที่ใช้ไปแล้วได้ 1 ใบ",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 25,
+      "type": "effect",
+      "nameTh": "Misdirection",
+      "author": "IK",
+      "imagePath": "0025.png",
+      "descriptionTh": "ฝ่ายตรงข้ามใช้ไพ่ effect ไม่ได้ 1 เทิร์น",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 26,
+      "type": "effect",
+      "nameTh": "Rejuvenate",
+      "author": "IK",
+      "imagePath": "0026.png",
+      "descriptionTh": "เลือกไพ่ที่ใช้ไปแล้วกลับเข้าเด็คได้ 2 ใบ แล้วทำการสับเด็ค",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 27,
+      "type": "effect",
+      "nameTh": "Time Lapse",
+      "author": "IK",
+      "imagePath": "0027.png",
+      "descriptionTh": "เข้า fatigue mode ทันที โดยที่ฝ่ายตรงข้ามเริ่มตีลูกก่อน",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 28,
+      "type": "serve",
+      "nameTh": "Combo Serve",
+      "author": "IK",
+      "imagePath": "0028.png",
+      "descriptionTh": "เลือกไพ่ในเด็คขึ้นมือได้ 1 ใบหลังจากใช้ไพ่ใบนี้",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 29,
+      "type": "serve",
+      "nameTh": "Fast Serve",
+      "author": "IK",
+      "imagePath": "0029.png",
+      "descriptionTh": "สามารถใช้แทนไพ่ Attack spd 1 ได้",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 30,
+      "type": "serve",
+      "nameTh": "Heavy Back Spin Serve",
+      "author": "IK",
+      "imagePath": "0030.png",
+      "descriptionTh": "ฝ่ายตรงข้ามใช้ไพ่ effect ไม่ได้ 1 เทิร์น และในเทิร์นหน้าฝ่ายตรงข้ามเลือก zone ที่จะตีได้แค่ Front เท่านั้น",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 31,
+      "type": "attack",
+      "nameTh": "ลูกธรรมดา",
+      "author": "Kris",
+      "imagePath": "0031.png",
+      "descriptionTh": "ตีธรรมดา ไม่มีผลอะไร",
+      "effectID": 0,
+      "parameters": [-1]
+    },
+	{
+      "cid": 32,
+      "type": "attack",
+      "nameTh": "ลูกธรรมดา",
+      "author": "Kris",
+      "imagePath": "0032.png",
+      "descriptionTh": "ตีธรรมดา ไม่มีผลอะไร",
+      "effectID": 0,
+      "parameters": [1]
+    },
+	{
+      "cid": 33,
+      "type": "attack",
+      "nameTh": "ลูกธรรมดา",
+      "author": "Kris",
+      "imagePath": "0033.png",
+      "descriptionTh": "SPD +1 หรือ SPD -1 (สามารถเลือกได้)",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 34,
+      "type": "attack",
+      "nameTh": "ตีเบาๆ",
+      "author": "Kris",
+      "imagePath": "0034.png",
+      "descriptionTh": "SPD -3.5 ถ้าเลือกตีลงข้างหน้า (Front)",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 35,
+      "type": "attack",
+      "nameTh": "Top Spin",
+      "author": "Kris",
+      "imagePath": "0035.png",
+      "descriptionTh": "ตี Top Spin ทำให้ความเร็วเพิ่มกลางอากาศตาเรา Attack Phase ครั้งต่อไป SPD + 2",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 36,
+      "type": "attack",
+      "nameTh": "Back Spin",
+      "author": "Kris",
+      "imagePath": "0036.png",
+      "descriptionTh": "ตี Back Spin ทำให้ความเร็วเปลี่ยนกลางอากาศพอศัตรูเดาทางเสร็จแล้ว SPD - 3",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 37,
+      "type": "attack",
+      "nameTh": "Counter",
+      "author": "Kris",
+      "imagePath": "0037.png",
+      "descriptionTh": "ถ้า BallSpeed > 10 ให้การ์ดใบนี้ SPD -5 แทน",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 38,
+      "type": "attack",
+      "nameTh": "ตบหลัง",
+      "author": "Kris",
+      "imagePath": "0038.png",
+      "descriptionTh": "สามารถตีไปข้างหลังเท่านั้น ห้ามเลือกตำแหน่ง",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 39,
+      "type": "attack",
+      "nameTh": "Back Hand",
+      "author": "Kris",
+      "imagePath": "0039.png",
+      "descriptionTh": "ถ้าตีไปซ้าย/ขวา SPD + 3 แทน",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 40,
+      "type": "effect",
+      "nameTh": "สะกดวิญญาณ",
+      "author": "Kris",
+      "imagePath": "0040.png",
+      "descriptionTh": "ศัตรู สามารถเลือกทิศได้แค่ หน้า หรือ ขวา ในตาต่อไป",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 41,
+      "type": "effect",
+      "nameTh": "Power Up!",
+      "author": "Kris",
+      "imagePath": "0041.png",
+      "descriptionTh": "ตาเราครั้งต่อไปไม่สามารถใช้การ์ด Attack ได้",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 42,
+      "type": "defense",
+      "nameTh": "Mid Defense",
+      "author": "Kris",
+      "imagePath": "0042.png",
+      "descriptionTh": "ก่อนทายสามารถเลือกกันได้ 2 ตำแหน่งคือหน้าและหลังพร้อมๆกัน SPD +- 2 (เลือกได้)",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 43,
+      "type": "defense",
+      "nameTh": "คถา 10 หัตถ์",
+      "author": "Kris",
+      "imagePath": "0043.png",
+      "descriptionTh": "ก่อนทายสามารถเลือกกันได้ 2 ตำแหน่งคือหน้าและหลังพร้อมๆกัน",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 44,
+      "type": "serve",
+      "nameTh": "หมดตัว",
+      "author": "Kris",
+      "imagePath": "0044.png",
+      "descriptionTh": "ทิ้งไพ่ทั้งหมดจากมือลงกองทิ้ง เพื่อเลือกไพ่จากสำหรับใหม่ 2 ใบ",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 45,
+      "type": "serve",
+      "nameTh": "ลูกหยอด",
+      "author": "Kris",
+      "imagePath": "0045.png",
+      "descriptionTh": "Nothing!!",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 46,
+      "type": "serve",
+      "nameTh": "ลูกดาวตก",
+      "author": "Kris",
+      "imagePath": "0046.png",
+      "descriptionTh": "ตีไปแรงมาก ทำให้ศัตรูกลัว ศัตรูไม่สามารถเลือกรับข้างหน้าได้ในตาหน้า (แต่สามารถตีข้างหน้าได้)",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 47,
+      "type": "attack",
+      "nameTh": "ลูกตบ",
+      "author": "Art",
+      "imagePath": "0047.png",
+      "descriptionTh": "หากผู้ใช้เลือกทิศทางเป็นด้านหลัง SPD เพิ่มอีก 0.5",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 48,
+      "type": "attack",
+      "nameTh": "ลูกตบ",
+      "author": "Art",
+      "imagePath": "0048.png",
+      "descriptionTh": "หากผู้ใช้เลือกทิศทางเป็นด้านหลัง SPD เพิ่มอีก 1",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 49,
+      "type": "effect",
+      "nameTh": "ตบสุดแรง",
+      "author": "Art",
+      "imagePath": "0049.png",
+      "descriptionTh": "เพิ่ม SPD อย่างรวดเร็ว SPD + 4",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 50,
+      "type": "effect",
+      "nameTh": "Flashhhh!!!",
+      "author": "Art",
+      "imagePath": "0050.png",
+      "descriptionTh": "ทำให้ลูกปิงปอง SPD * 1.5",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 51,
+      "type": "attack",
+      "nameTh": "บล็อก",
+      "author": "Art",
+      "imagePath": "0051.png",
+      "descriptionTh": "หากฝ่ายตรงข้ามทายทิศทางผิด SPD ลดอีก 0.5",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 52,
+      "type": "attack",
+      "nameTh": "บล็อก",
+      "author": "Art",
+      "imagePath": "0052.png",
+      "descriptionTh": "ตีธรรมดา",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	  {
+      "cid": 53,
+      "type": "effect",
+      "nameTh": "ลูกตบ",
+      "author": "Art",
+      "imagePath": "0053.png",
+      "descriptionTh": "ลด SPD อย่างรวดเร็ว SPD -4.5",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid":54,
+      "type": "effect",
+      "nameTh": "Set To Six",
+      "author": "Art",
+      "imagePath": "0047.png",
+      "descriptionTh": "ถ้า SPD มากกว่า 6 ทำให้ SPD = 6 ถ้าไม่อย่างนั้น SPD - 2",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 55,
+      "type": "effect",
+      "nameTh": "Lucky Ball",
+      "author": "Art",
+      "imagePath": "0055.png",
+      "descriptionTh": "ทำให้ลูกปิงปอง SPD = 7",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 56,
+      "type": "attack",
+      "nameTh": "ลูกตบ",
+      "author": "Art",
+      "imagePath": "0056.png",
+      "descriptionTh": "ตีธรรมดา",
+      "effectID": 0,
+      "parameters": [1]
+    },
+	{
+      "cid": 57,
+      "type": "attack",
+      "nameTh": "ลูกตบ",
+      "author": "Art",
+      "imagePath": "0057.png",
+      "descriptionTh": "ตีธรรมดา",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 58,
+      "type": "attack",
+      "nameTh": "ลูกหยอด",
+      "author": "Art",
+      "imagePath": "0058.png",
+      "descriptionTh": "หากผู้ใช้เลือกทิศทางเป็นด้านหลัง SPD เพิ่มอีก 1",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 59,
+      "type": "serve",
+      "nameTh": "technique serve",
+      "author": "Art",
+      "imagePath": "0059.png",
+      "descriptionTh": "จั่วการ์ดสองใบจากกองขึ้นมือ หลังจากนั้นเลือกทิ้งหนึ่งใบในมือ",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 60,
+      "type": "serve",
+      "nameTh": "เสิร์ฟนะ",
+      "author": "Art",
+      "imagePath": "0060.png",
+      "descriptionTh": "จั่วการ์ดหนึ่งใบจากกอง",
+      "effectID": 0,
+      "parameters": [2]
+    },
+	{
+      "cid": 61,
+      "type": "defense",
+      "nameTh": "ให้คุกกี้ทำนายกัน",
+      "author": "Art",
+      "imagePath": "0061.png",
+      "descriptionTh": "หากทายถูก SPD -3 ทายผิด SPD -1.5",
+      "effectID": 0,
+      "parameters": [-3]
+    }
+  ],
+  "cardsImageBasePath": "asserts/sprites/cards/"
+}
