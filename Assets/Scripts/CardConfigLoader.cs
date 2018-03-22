@@ -9,10 +9,12 @@ public class CardConfigLoader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        string cardConfigJsonPath = Application.dataPath + "/Config/cards_config_v2.json";
-        if (File.Exists(cardConfigJsonPath))
+        
+        TextAsset txt = Resources.Load<TextAsset>("Config/cards_config_v2.json".Replace(".json", ""));
+        
+        if (txt != null)
         {
-            string dataAsJson = File.ReadAllText(cardConfigJsonPath);
+            string dataAsJson = txt.text;
             CardConfigData ccd = CardConfigData.FromJSON(dataAsJson);
             foreach (CardData cd in ccd.cards)
             {
@@ -20,7 +22,7 @@ public class CardConfigLoader : MonoBehaviour {
             }
         } else
         {
-            Debug.LogError("CardConfigJson File does not exist! (value = " + cardConfigJsonPath + ")");
+            Debug.LogError("CardConfigJson File does not exist!");
         }
         Debug.Log("CardFactory.Count = " + CardFactory.instance.CountCardPrototypes());
 
