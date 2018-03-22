@@ -32,6 +32,9 @@ public class Ball : MonoBehaviour {
 	}
 
 	public void setSpeed(float new_speed){
+		if (new_speed < 0) {
+			new_speed = 0;
+		}
 		speed = new_speed;
 	}
 
